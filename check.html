@@ -1,0 +1,1590 @@
+<!doctype html>
+<html lang="it-IT">
+    <head>
+        <meta charset="utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"UwUAWF5RGwcHVFdaBAA="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),f=c.length,u=i(a,o,r),d=0;f>d;d++)c[d].apply(u,n);return u}function a(t,e){f[t]=s(t).concat(e)}function s(t){return f[t]||[]}function c(){return n(e)}var f={};return{on:a,emit:e,create:c,listeners:s,_events:f}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t){try{i.console&&console.log(t)}catch(e){}}var n,r=t("ee"),o=t(1),i={};try{n=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(i.console=!0,-1!==n.indexOf("dev")&&(i.dev=!0),-1!==n.indexOf("nr_dev")&&(i.nrDev=!0))}catch(a){}i.nrDev&&r.on("internal-error",function(t){e(t.stack)}),i.dev&&r.on("fn-err",function(t,n,r){e(r.stack)}),i.dev&&(e("NR AGENT IN DEVELOPMENT MODE"),e("flags: "+o(i,function(t){return t}).join(", ")))},{1:23,ee:"QJf3ax"}],4:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(f){try{r("ierr",[f,(new Date).getTime(),!0])}catch(u){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,t(5),window.onerror=e;try{throw new Error}catch(f){"stack"in f&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&t(4),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:10,2:9,3:7,4:11,5:3,6:24,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t){t("loader").features.ins=!0},{loader:"G9z0Bl"}],6:[function(t){function e(){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var n=t("ee"),r=t("handle"),o=t(1),i=t(2);t("loader").features.stn=!0,t(3),n.on("fn-start",function(t){var e=t[0];e instanceof Event&&(this.bstStart=Date.now())}),n.on("fn-end",function(t,e){var n=t[0];n instanceof Event&&r("bst",[n,e,this.bstStart,Date.now()])}),o.on("fn-start",function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),o.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),this.bstType])}),i.on("fn-start",function(){this.bstStart=Date.now()}),i.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),n.on("pushState-start",function(){this.time=Date.now(),this.startPath=location.pathname+location.hash}),n.on("pushState-end",function(){r("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),"addEventListener"in window.performance&&(window.performance.addEventListener("webkitresourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.webkitClearResourceTimings()},!1),window.performance.addEventListener("resourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.clearResourceTimings()},!1)),document.addEventListener("scroll",e,!1),document.addEventListener("keypress",e,!1),document.addEventListener("click",e,!1)}},{1:10,2:9,3:8,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],7:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=(t(1),t("ee").create()),i=t(2)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:24,2:25,ee:"QJf3ax",gos:"7eSDFh"}],8:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window.history,["pushState"],"-")},{1:25,2:24,ee:"QJf3ax"}],9:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:25,2:24,ee:"QJf3ax"}],10:[function(t,e){function n(t,e,n){t[0]=o(t[0],"fn-",null,n)}var r=(t(2),t("ee").create()),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:25,2:24,ee:"QJf3ax"}],11:[function(t,e){function n(){f.inPlace(this,p,"fn-")}function r(t,e){f.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}function i(t,e){for(var n in t)e[n]=t[n];return e}var a=t("ee").create(),s=t(1),c=t(2),f=c(a),u=c(s),d=window.XMLHttpRequest,p=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=a,window.XMLHttpRequest=function(t){var e=new d(t);try{a.emit("new-xhr",[],e),u.inPlace(e,["addEventListener","removeEventListener"],"-",o),e.addEventListener("readystatechange",n,!1)}catch(r){try{a.emit("internal-error",[r])}catch(i){}}return e},i(d,XMLHttpRequest),XMLHttpRequest.prototype=d.prototype,f.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),a.on("send-xhr-start",r),a.on("open-xhr-start",r)},{1:7,2:25,ee:"QJf3ax"}],12:[function(t){function e(t){var e=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!e.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var a=t.responseType,f="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,u=n(f);if(u&&(r.rxSize=u),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(e.cat=d.split(", ").pop())}}else e.status=0;r.cbTime=this.cbTime,o("xhr",[e,r,this.startTime])}}}function n(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,f=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=e,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,e){var r=this.metrics,o=t[0],i=this;if(r&&o){var f=n(o);f&&(r.txSize=f)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{a.emit("internal-error",[n])}catch(r){}}};for(var u=0;c>u;u++)e.addEventListener(s[u],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:13,3:11,4:7,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],13:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],14:[function(t,e){function n(t){return function(){r(t,[(new Date).getTime()].concat(i(arguments)))}}var r=t("handle"),o=t(1),i=t(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(t,e){window.NREUM[e]=n("api-"+e)}),e.exports=window.NREUM},{1:23,2:24,handle:"D5DuLP"}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info,e=f.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){s(d,function(e,n){e in t||(t[e]=n)});var n="https"===u.split(":")[0]||t.sslForHttp;p.proto=n?"https://":"http://",a("mark",["onload",i()]);var r=f.createElement("script");r.src=p.proto+t.agent,e.parentNode.insertBefore(r,e)}}function r(){"complete"===f.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=(t(2),window),f=c.document,u=(""+location).split("?")[0],d={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-632.min.js"},p=e.exports={offset:i(),origin:u,features:{}};f.addEventListener?(f.addEventListener("DOMContentLoaded",o,!1),c.addEventListener("load",n,!1)):(f.attachEvent("onreadystatechange",r),c.attachEvent("onload",n)),a("mark",["firstbyte",i()])},{1:23,2:14,handle:"D5DuLP"}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],23:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],24:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],25:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,f;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){u([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return f=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,f],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,f(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,f?s+o:o,i,s))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){u([o,e,n,r])}}function f(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){u([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function u(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:24,ee:"QJf3ax"}]},{},["G9z0Bl",4,12,6,5]);</script>
+        <title>Glocal Agency di Claudia Daprà - GuidaTraduzioni.it</title>
+        <link type="text/css" rel="stylesheet" media="all" href="/00000526/css/jquery-ui.custom.css" />
+                <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://www.guidatraduzioni.it/feed/company/get?id=142665" />
+        
+            <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#173357" />
+
+    <!-- TODO IF THIS CONTENT NO EXIST NO PRINT -->
+    <meta name="description" content="Traduzioni - Glocal Agency di Claudia Daprà - Glocal Agency di Claudia Daprà è un'agenzia di traduzione con sede a Trento che, grazie alle più avanzate..." />
+    <meta name="keywords" content="" />
+    <!-- TODO IF THIS CONTENT NO EXIST NO PRINT -->
+
+    <meta name="robots" content="index,follow" />
+        <link rel="canonical" href="http://www.guidatraduzioni.it/traduzioni-glocal-agency-di-claudia-dapra-vtraduzioni-142665.html" />
+    
+    <!--[if lt IE 9]>
+        <script src="/00000526/js/selectivizr.js"></script>
+    <![endif]-->
+    <!-- The Grid -->
+    <link media="screen" type="text/css" rel="stylesheet" href="/00000526/site/own/front_css.css" />
+    <link media="all"    type="text/css" rel="stylesheet" href="/00000526/site/own/lib_external.css" />
+
+    <!-- 1140px Grid styles for IE -->
+    <!--[if lte IE 9]><link rel="stylesheet" href="/00000526/site/own/ie.css" type="text/css" media="screen" /><![endif]-->
+    <!--[if lte IE 8]><link rel="stylesheet" href="/00000526/site/own/ie_eight.css" type="text/css" media="screen" /><![endif]-->
+
+    <script src="/00000526/js/mobile-detect.min.js"></script>
+    <script type="text/javascript" src="/00000526/site/own/device_configuration.js"></script>
+        <!-- GA ASYNC CODE -->
+<script type="text/javascript">
+//<![CDATA[
+    // Normal async tracker
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-9551540-1']);
+    _gaq.push(['_setDomainName', 'none']);
+    _gaq.push(['_setAllowLinker', true]);
+
+    // Global async tracker
+    _gaq.push(
+        ['globalTracker._setAccount', 'UA-11698778-2'],
+        ['globalTracker._setDomainName', 'none'],
+        ['globalTracker._setAllowLinker', true]
+     );
+
+    // Country async tracker
+    _gaq.push(
+        ['countryTracker._setAccount', 'UA-11698778-5'],
+        ['countryTracker._setDomainName', 'none'],
+        ['countryTracker._setAllowLinker', true]
+     );
+
+        _gaq.push(
+        ['_trackPageview'],
+        ['globalTracker._trackPageview'],
+        ['countryTracker._trackPageview']
+     );
+    
+    // Checks GA SERPs rank
+    var rank = '';
+    if (document.referrer.search(/[\?|&]cd=/) != -1
+        && document.referrer.search(/google\./) != -1
+    ) {
+        rank = document.referrer.match(/[&|\?]cd=([\d]+)/);
+    }
+    // Setting custom variables
+    if (rank != '') {
+        _gaq.push(
+            ['_setCustomVar', 4, 'rank', rank[1], 2],
+            ['globalTracker._setCustomVar', 4, 'rank', rank[1], 2],
+            ['countryTracker._setCustomVar', 4, 'rank', rank[1], 2]
+        );
+    }
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+//]]>
+</script>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-MC2ZF8"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MC2ZF8');</script>
+<!-- End Google Tag Manager -->
+
+                <style type="text/css">
+            #js_company_video_wrapper { max-width:100% !important; width:100% !important;}
+        </style>
+            </head>
+
+
+    <body class="company-card ">
+
+        
+        <div class="container" itemscope itemtype="http://schema.org/LocalBusiness">
+
+                <header>
+
+        <div class="top-header">
+            <div class="content">
+                <div class="twelvecol ">
+
+                    <ul class="text-align-R">
+                        <li class="inline-b">
+                            <a href="/front/user_account/login.html" rel="nofollow" class="icon-user" title="Accesso Aziende">Accesso Aziende</a>
+                        </li>
+                                                                                        <li class="inline-b">
+                                <div class="flg-top">
+                                    <div class="flg-itm">
+                                        <ul>
+                                                                                        <li class="flg-es"><button type="button" class="js_change_domain" value="http://www.traduccion365.com">España</button></li>
+                                                                                        <li class="flg-it"><button type="button" class="js_change_domain" value="http://www.guidatraduzioni.it">Italia</button></li>
+                                                                                    </ul>
+                                    </div>
+                                </div>
+                                                                    <div class="flg-sel flg-it relative inline-b">
+                                        <strong>Italia</strong>
+                                    </div>
+                                                                </li>
+                                                </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="header" class="row">
+
+            <div class="content">
+
+                <div class="ninecol">
+                    <nav>
+                        <div id="nav">
+                            <a href="/" title="traduzioni" rel="home" class="float-L logo">
+                                <img src="/site/own/logo-h-2x.png" alt="traduzioni" title="traduzioni" width="350" height="100"/>
+                            </a>
+                            <div id="mb_menu">
+                                <span class="icon-list-2 plain-title">GuidaTraduzioni.it</span>
+                            </div>
+                            <ul class="menu">
+
+                                <li class="float-L tab-home "><a href="/" title="Traduzioni" rel="home"><span class="icon-home"></span>Home</a></li>
+                                <li class="float-L "><a href="/imprese.html" title="Imprese di Traduzioni"><span class="icon-list"></span>Imprese</a></li>
+                                                                    <li class="float-L "><a href="/offerte" title="Offerte di Traduzioni "><span class="icon-star-3"></span>Offerte</a></li>
+                                                                <li class="float-L "><a href="/articoli.html" title="Tutto su Traduzioni"><span class="icon-file"></span>Notizie</a></li>
+                                                                                                    <li class="float-L ">
+                                        <a href="/domande" title="Domande">
+                                            <span class="icon-question-sign"></span>Domande                                        </a>
+                                    </li>
+                                
+                                                                
+                                
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+                <div class="threecol toolbar last text-align-R flgs-box">
+
+                     <a href="/register_web.html" rel="nofollow" class="sign-up" title="Registra la tua azienda">
+                         Registra la tua azienda gratis                     </a>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+            <div class="out">
+                <div class="in relative">
+
+                    <div class="content header-company-box">
+                        <div class="row">
+                            <div class="ninecol breadcrumb">
+                                    <ul>
+                    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+                            <span>
+                    <a href="/"
+                       title="Traduzioni" itemprop="url">
+                        <span itemprop="title">Traduzioni</span>
+                    </a> &nbsp;&gt;
+                </span>
+
+                        </li>
+                    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+                            <span>
+                    <a href="/imprese.html"
+                       title="Imprese di Traduzioni" itemprop="url">
+                        <span itemprop="title">Imprese</span>
+                    </a> &nbsp;&gt;
+                </span>
+
+                        </li>
+                    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+                            <span>
+                    <a href="/traduzioni-trento-vprovincia-237102.html"
+                       title="Traduzioni Trento" itemprop="url">
+                        <span itemprop="title">Trento</span>
+                    </a> &nbsp;&gt;
+                </span>
+
+                        </li>
+                    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+                            <span>
+                    <a href="/traduzioni-trento-vcitta-237007854.html"
+                       title="Traduzioni Trento (Città)" itemprop="url">
+                        <span itemprop="title">Trento (Città)</span>
+                    </a> &nbsp;&gt;
+                </span>
+
+                        </li>
+                    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+                            <strong itemprop="title">Glocal Agency di Claudia Daprà</strong>
+                <meta itemprop="url" content="http://www.guidatraduzioni.it/traduzioni-glocal-agency-di-claudia-dapra-vtraduzioni-142665.html" />
+                        </li>
+            </ul>
+                            </div>
+                        </div>
+
+                        <div class="absolute head-pager">
+                            <div class="navigation" id="nav_top"></div>
+                        </div>
+
+                        <div class="row">
+                            <div class="company-header">
+            <span class="customer_icon absolute" title="Impresa in primo piano"></span>
+        <div class="ninecol">
+        <div class="company-logo hide_smrtphn">
+            <img class="logo" src="/site/company/51/142665/logo/glocal-agency-di-claudia-dapra_li1.png" alt="Glocal Agency di Claudia Daprà" title="Glocal Agency di Claudia Daprà" itemprop="image" />
+        </div>
+
+        <div class="company-name">
+            <h1 class="fn org" itemprop="name">Glocal Agency di Claudia Daprà</h1>
+
+                        <div class="review-head-box" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+                <div class="rvw-box score-rw">
+                    <div class="line-rating">
+                        <span class="rating">
+                            <meta class="average" itemprop="ratingValue" content="5" />
+                            <meta class="best" itemprop="bestRating" content="5" />
+                        </span>
+                        <!-- star average rate -->
+                        <div class="inline-b inline-reviews">
+                                                                                            <a href="/traduzioni-glocal-agency-di-claudia-dapra-vrev-142665.html">
+                                    <span class="icon-star-full"></span><span class="icon-star-full"></span><span class="icon-star-full"></span><span class="icon-star-full"></span><span class="icon-star-full"></span>                                    <span itemprop="reviewCount">(4)</span>
+                                    |
+                                    <span>
+                                        100% la raccomandano                                    </span>
+                                </a>
+                                                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            
+            <!-- DTO BOX -->
+                        <div>
+                <div class="dto-mini-box inline-b">
+                    <span class="dto brds-round0">
+                        5 % sconto                    </span>
+                </div>
+                <span class="dto-exp">Solo con GuidaTraduzioni.it</span>
+            </div>
+                        <!-- DTO BOX -->
+
+            
+            <span class="hide_tblt hide_dsktp">Trento (Trento)</span>
+
+            <address class="icon-location adr hide_smrtphn" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                <span class="street-address">
+                                         <span itemprop="streetAddress">via Degasperi 18</span>, <span class="locality" itemprop="addressLocality">Trento (Città)</span>&nbsp;-&nbsp;<span itemprop="addressRegion">Trento</span>
+                                                    </span>
+            </address>
+
+            <div class="phone-box-head">
+
+                <div class="line-tel">
+                    <!-- make review -->
+                    <div class="make-review inline-b v-align-T">
+                                        <a class="icon-bubble mkreview hide_smrtphn" data-com="142665">
+                        Lascia una raccomandazione                    </a>
+                                        </div>
+                    <!-- make review -->
+
+                    <!-- CLIENT PHONE -->
+                    <div id="tlf_data" class="tlf_ico inline-b hide_smrtphn v-align-T">
+                                                <div id="divShowPhone"></div>
+                        <a id="js_show_phone" onclick="gaqTrackEvent('CompanyCard', 'seephone', 'show_phone_head');" class="icon-phone"
+                           href="/traduzioni-glocal-agency-di-claudia-dapra-vtraduzioni-142665.html#show_phone" title="Telefono">
+                            Telefono                        </a>
+                                            </div>
+                    <!-- CLIENT PHONE -->
+                </div>
+
+
+                                <div class="clean hide_smrtphn">
+                    
+                                        <button class="std-btn js_presu req_btn" title="Chiedi un preventivo gratis" onclick="gaqTrackEvent('CompanyCard', 'ask_request', 'headerButton_company');">
+                        Chiedi un preventivo gratis                    </button>
+                    
+                                    </div>
+                <div class="hide_dsktp hide_tblt" data-country="109">
+                    <button style="float:left; display:inline-block;" class="std-btn js_presu req_btn" title="Chiedi un preventivo gratis" onclick="gaqTrackEvent('CompanyCard', 'ask_request', 'headerButton_company'); window.location.href='/traduzioni-glocal-agency-di-claudia-dapra-vtraduzioni-142665.html#frm-request'">
+                        <span class="icon-envelope"></span>
+                        Chiedi un preventivo                    </button>
+
+                                            <a href="tel:3288526391">
+                            <button class="std-btn jq_call_phone js_visit_phone alt-color"
+                                    style="padding:5px 4px 3px 4px; margin-left: 4px;"
+                                    data-com="142665"
+                                    title="Telefono">
+                                <span class="icon-phone" style="margin-top:-4px;"></span>
+                            </button>
+                        </a>
+                                    </div>
+                <div class="sticky_buttons hide_dsktp hide_tblt" data-country="109">
+
+                                            <a href="tel:3288526391">
+                            <button class="std-btn jq_call_phone js_visit_phone" data-com="142665" title="Telefono">
+                                <span class="icon-phone"></span>
+                                Chiama                            </button>
+                            <button style="float:none; width:130px; display:inline-block;" class="std-btn js_presu req_btn" title="Chiedi un preventivo gratis" onclick="gaqTrackEvent('CompanyCard', 'ask_request', 'headerButton_company'); window.location.href='/traduzioni-glocal-agency-di-claudia-dapra-vtraduzioni-142665.html#frm-request'">
+                                <span class="icon-envelope"></span>
+                                Contatta                            </button>
+                        </a>
+                    
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="relative threecol last">
+                <div class="badges-head-box hide_smrtphn">
+                                            <div class="badge-module bg-24">
+                    <span class="badges-response-text">
+                        Risponde in meno di 24 ore                    </span>
+                </div>
+                            
+
+        </div>
+        
+    </div>
+
+</div>
+                        </div>
+                    </div>
+                    <div class="content">
+                            
+        <div class="company-tab-start">
+            <a class="icon-list-2">Più dettagli</a>
+        </div>
+
+        <div class="row tabs company-nav brds-round1">
+
+                        <div class="float-R web-link brds-round1">
+                <a class="icon-arrow-up-right" target="_blank" onclick="gaqTrackEvent('CompanyCard', 'view_website', 'menu-tabs');" href="/traduzioni-glocal-agency-di-claudia-dapra-vweb-142665.html" title="Pagina web di Glocal Agency di Claudia Daprà">
+                    Visita il sito                </a>
+            </div>
+            
+            <ul>
+                <li class="float-L tab info  active">
+                  <a id="tab_info"  href="/traduzioni-glocal-agency-di-claudia-dapra-vtraduzioni-142665.html" title="Glocal Agency di Claudia Daprà">
+                  L'Azienda                  </a>
+                </li>
+                                      <li class="float-L tab adv-data  ">
+                          <a href="/traduzioni-glocal-agency-di-claudia-dapra-vtraduzioni-142665.html?tab=adv" title="Glocal Agency di Claudia Daprà">
+                              Dettagli                          </a>
+                      </li>
+                                                <li class="float-L tab map">
+                    <a id="tab_image" href="/traduzioni-glocal-agency-di-claudia-dapra-vimg-142665.html" title="Immagini di Glocal Agency di Claudia Daprà">
+                        Immagini <span>1</span>
+                    </a>
+                </li>
+                
+                
+                <!-- COMMENTED AT THE MOMENT -->
+                
+                                <li class="float-L tab map">
+                    <a id="tab_reviews" href="/traduzioni-glocal-agency-di-claudia-dapra-vrev-142665.html" title="Raccomandazioni">
+                        Raccomandazioni <!-- <span> 4 --></span>
+                    </a>
+                </li>
+                                                <li class="float-L tab offer map">
+                    <a id="tab_offers" href="/traduzioni-glocal-agency-di-claudia-dapra-vofr-142665.html" title="Offerte di Glocal Agency di Claudia Daprà">
+                        Offerte <span>4</span>
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+                        </div>
+                </div>
+            </div>
+
+            <div class="content">
+
+                <div class="row">
+
+                    <!-- MAIN CONTENT -->
+                    <div class="eightcol main-col">
+
+                        <!-- Advanced signup summary -->
+                                                                                    <div class="lnk-tab-group">
+                                    <a class="icon-plus">Informazioni</a>
+                                </div>
+                                <div class="tab-group">
+                                    <h2 class="hide_smrtphn">L'impresa</h2>
+                                                    <!-- This template is used just in company card -->
+
+               <!-- Advanced signup summary -->
+                                                        <div class="main-secction adv-data-t">
+
+                        <table cellpadding="0" cellspacing="0">
+                                                                                    <tr>
+                                                                <td class="text-align-R" valign="top"><strong class="tit-1">L'agenzia</strong></td>
+                                <td>
+                                                                                                            <div class="adv-element">
+                                                                            <strong>Partita IVA:</strong>
+                                        <ul>
+                                                                                                                                        <li><span class="icon-checkmark"></span> 02275280226</li>
+                                                                                    </ul>
+                                                                        </div>
+                                                                        <div class="adv-element">
+                                                                            <strong>Siamo:</strong>
+                                        <ul>
+                                                                                                                                        <li><span class="icon-checkmark"></span> Un'agenzia di traduzione</li>
+                                                                                    </ul>
+                                                                        </div>
+                                                                                                    </td>
+                            </tr>
+                                                        <tr>
+                                                                <td class="text-align-R" valign="top"><strong class="tit-1">I Servizi:</strong></td>
+                                <td>
+                                                                                                            <div class="adv-element">
+                                                                            <strong>Prima traduzione gratuita:</strong>
+                                        <ul>
+                                                                                                                                        <li><span class="icon-checkmark"></span> No</li>
+                                                                                    </ul>
+                                                                        </div>
+                                                                        <div class="adv-element">
+                                                                            <strong>Principali clienti:</strong>
+                                        <ul>
+                                                                                                                                        <li><span class="icon-checkmark"></span> Privati</li>
+                                                                                            <li><span class="icon-checkmark"></span> Imprese</li>
+                                                                                            <li><span class="icon-checkmark"></span> Enti pubblici</li>
+                                                                                    </ul>
+                                                                        </div>
+                                                                        <div class="adv-element">
+                                                                            <strong>Staff costituito da:</strong>
+                                        <ul>
+                                                                                                                                        <li><span class="icon-checkmark"></span> Traduttori</li>
+                                                                                            <li><span class="icon-checkmark"></span> Interpreti</li>
+                                                                                    </ul>
+                                                                        </div>
+                                                                        <div class="adv-element">
+                                                                            <strong>Lingue:</strong>
+                                        <ul>
+                                                                                                                                        <li><span class="icon-checkmark"></span> Inglese, tedesco, francese, spagnolo, russo, portoghese ecc.</li>
+                                                                                    </ul>
+                                                                        </div>
+                                                                        <div class="adv-element">
+                                                                            <strong>Traduttori ufficiali per la Pubblica Amministrazione:</strong>
+                                        <ul>
+                                                                                                                                        <li><span class="icon-checkmark"></span> Sì</li>
+                                                                                    </ul>
+                                                                        </div>
+                                                                        <div class="adv-element">
+                                                                            <strong>Traduzione di pagine web:</strong>
+                                        <ul>
+                                                                                                                                        <li><span class="icon-checkmark"></span> SDL Trados 2014</li>
+                                                                                    </ul>
+                                                                        </div>
+                                                                                                    </td>
+                            </tr>
+                                                        <tr>
+                                                                <td class="text-align-R" valign="top"><strong class="tit-1">Metodo di pagamento</strong></td>
+                                <td>
+                                                                                                            <div class="adv-element">
+                                                                            <strong>Prezzo medio per una traduzione:</strong>
+                                        <ul>
+                                                                                                                                        <li><span class="icon-checkmark"></span> Bonifico bancario</li>
+                                                                                    </ul>
+                                                                        </div>
+                                                                                                    </td>
+                            </tr>
+                                                    </table>
+                    </div>
+                        <div class="show-adv-data text-align-R">
+                            <a href="/traduzioni-glocal-agency-di-claudia-dapra-vtraduzioni-142665.html?tab=adv" class="fk-lnk" onclick="gaqTrackEvent('CompanyCard', 'view_adv_data', 'view_more');">Più dettagli</a>
+                        </div>
+                                    <!-- Advanced signup summary -->
+
+                <!-- Advanced signup details -->
+                                                </div>
+                                                                            <!-- Advanced signup summary -->
+
+                        <!-- Advanced signup details -->
+                        
+                        <div class="complete-data">
+                                                        <!-- Advanced signup details -->
+
+
+                            <!-- MAIN DESCRIPTION -->
+                            <div>
+                                <div class="lnk-tab-group">
+                                    <a class="icon-plus">Descrizioni</a>
+                                </div>
+                                <div class="tab-group">
+                                    <h3 id="company_data_title_2" class="hide_smrtphn">Descrizioni</h3>
+
+                                    <div class="company-description">
+                                        <p><strong>Glocal Agency di Claudia Daprà </strong>è un'agenzia di traduzione con sede a Trento che, grazie alle più avanzate tecnologie e all'interazione con professionisti del settore, riesce "a cucirvi" servizi di traduzione e localizzazione su misura.</p>
+<p>Presso l'agenzia è possibile richiedere servizi di:</p>
+<ul><li>traduzione;</li>
+<li>localizzazione;</li>
+<li><strong>interpretariato</strong>;</li>
+<li>creazione siti web</li>
+<li>web marketing</li>
+<li>trascrizioni;</li>
+<li>corsi di lingua;</li>
+<li><strong>corsi SDL TRADOS</strong>.</li>
+</ul><p>I servizi di <strong>traduzione</strong> sono rivolti a diverse tipologie di testo:</p>
+<ul><li>generici;</li>
+<li>letterari;</li>
+<li>tecnici;</li>
+<li>giuridici;</li>
+<li>economici;</li>
+<li>medici;</li>
+<li>scientifici;</li>
+<li>siti web.</li>
+</ul><p><strong>Glocal Agency di Claudia Daprà </strong>si trova a <strong>Trento </strong>e, su appuntamento,in<strong> Val di Sole</strong>.</p>                                    </div>
+
+                                    <!-- Appointment module -->
+                                                                        <!-- Appointment module -->
+
+                                </div>
+                            </div>
+                            <!-- MAIN DESCRIPTION -->
+
+                            
+                            <!-- MAIN OFFERS -->
+                                                        <div class="lnk-tab-group">
+                                <a class="icon-plus">Offerte</a>
+                            </div>
+                            <div class="tab-group">
+                                <div>
+                                    <h2 id="company_offer_title_2" class="hide_smrtphn">Offerte</h2>
+                                    			<!-- OFFER COLUMN -->
+            									<div class=" offer-box offer-listing ">
+				<div class="offer-item last">
+					<a href="/offerte/142665/sconto-del-10-su-tutte-le-traduzioni-dallitaliano-al-tedesco"  title="Sconto del 10% su tutte le traduzioni dall'italiano al tedesco" class="img-lnk" >
+
+                        <img data-preview='image' src="/site/own/offer-no-image.png" alt="Sconto del 10% su tutte le traduzioni dall'italiano al tedesco" width="305" height="229"/>
+
+		                <span class="offer-date-limit">
+                                                    Valida fino al 31 Ottobre 2015                                                </span>
+					</a>
+
+					<div class="jq_offer_item">
+						<h3>
+							<a href="/offerte/142665/sconto-del-10-su-tutte-le-traduzioni-dallitaliano-al-tedesco" data-preview="off_title" title="Sconto del 10% su tutte le traduzioni dall'italiano al tedesco">Sconto del 10% su tutte le traduzioni dall'italiano al tedesco</a>
+						</h3>
+						<strong>Da Glocal Agency di Claudia Daprà</strong>
+						<p>
+							<span data-previewlimit='150' data-preview="off_description">Hai capito bene! Su tutte le traduzioni dall'ITALIANO AL TEDESCO, senza un minimo di ordine, applichiamo uno ...</span>
+														<a href="/offerte/142665/sconto-del-10-su-tutte-le-traduzioni-dallitaliano-al-tedesco"  title="Sconto del 10% su tutte le traduzioni dall'italiano al tedesco">Vedi tutto</a>
+													</p>
+					</div>
+
+                    <div class="dto-3d">
+                                                    <span data-preview="off_discount"  class="dto-num">10 %</span>
+                            <span>Sconto</span>
+                                                <div class="c_left"></div>
+                    </div>
+
+				</div>
+			</div>
+									<div class=" offer-box offer-listing last">
+				<div class="offer-item last">
+					<a href="/offerte/142665/sconto-del-10-su-tutte-le-traduzioni-dallitaliano-al-romeno"  title="Sconto del 10% su tutte le traduzioni dall'italiano al romeno" class="img-lnk" >
+
+                        <img data-preview='image' src="/site/own/offer-no-image.png" alt="Sconto del 10% su tutte le traduzioni dall'italiano al romeno" width="305" height="229"/>
+
+		                <span class="offer-date-limit">
+                                                    Valida fino al 31 Ottobre 2015                                                </span>
+					</a>
+
+					<div class="jq_offer_item">
+						<h3>
+							<a href="/offerte/142665/sconto-del-10-su-tutte-le-traduzioni-dallitaliano-al-romeno" data-preview="off_title" title="Sconto del 10% su tutte le traduzioni dall'italiano al romeno">Sconto del 10% su tutte le traduzioni dall'italiano al romeno</a>
+						</h3>
+						<strong>Da Glocal Agency di Claudia Daprà</strong>
+						<p>
+							<span data-previewlimit='150' data-preview="off_description">Hai capito bene! Su tutte le traduzioni dall'ITALIANO AL ROMENO, senza un minimo di ordine, applichiamo uno ...</span>
+														<a href="/offerte/142665/sconto-del-10-su-tutte-le-traduzioni-dallitaliano-al-romeno"  title="Sconto del 10% su tutte le traduzioni dall'italiano al romeno">Vedi tutto</a>
+													</p>
+					</div>
+
+                    <div class="dto-3d">
+                                                    <span data-preview="off_discount"  class="dto-num">10 %</span>
+                            <span>Sconto</span>
+                                                <div class="c_left"></div>
+                    </div>
+
+				</div>
+			</div>
+									<div class=" offer-box offer-listing ">
+				<div class="offer-item last">
+					<a href="/offerte/142665/sconto-5-su-tutte-le-traduzioni"  title="Sconto 5% su tutte le traduzioni" class="img-lnk" >
+
+                        <img data-preview='image' src="/site/own/offer-no-image.png" alt="Sconto 5% su tutte le traduzioni" width="305" height="229"/>
+
+		                <span class="offer-date-limit">
+                                                    Valida fino al 31 Ottobre 2015                                                </span>
+					</a>
+
+					<div class="jq_offer_item">
+						<h3>
+							<a href="/offerte/142665/sconto-5-su-tutte-le-traduzioni" data-preview="off_title" title="Sconto 5% su tutte le traduzioni">Sconto 5% su tutte le traduzioni</a>
+						</h3>
+						<strong>Da Glocal Agency di Claudia Daprà</strong>
+						<p>
+							<span data-previewlimit='150' data-preview="off_description">Impossibile perderselo. Non c'è un minimo di ordine. Sconto del 5% su tutte, ma proprio su tutte le traduzioni. ...</span>
+														<a href="/offerte/142665/sconto-5-su-tutte-le-traduzioni"  title="Sconto 5% su tutte le traduzioni">Vedi tutto</a>
+													</p>
+					</div>
+
+                    <div class="dto-3d">
+                                                    <span data-preview="off_discount"  class="dto-num">5 %</span>
+                            <span>Sconto</span>
+                                                <div class="c_left"></div>
+                    </div>
+
+				</div>
+			</div>
+									<div class=" offer-box offer-listing last">
+				<div class="offer-item last">
+					<a href="/offerte/142665/5-di-sconto-per-te"  title="5% di sconto per te" class="img-lnk" >
+
+                        <img data-preview='image' src="/site/own/offer-no-image.png" alt="5% di sconto per te" width="305" height="229"/>
+
+		                <span class="offer-date-limit">
+                                                    Sconto permanente                                                </span>
+					</a>
+
+					<div class="jq_offer_item">
+						<h3>
+							<a href="/offerte/142665/5-di-sconto-per-te" data-preview="off_title" title="5% di sconto per te">5% di sconto per te</a>
+						</h3>
+						<strong>Da Glocal Agency di Claudia Daprà</strong>
+						<p>
+							<span data-previewlimit='150' data-preview="off_description">Inizia a risparmiare subito approfittando del  5% di sconto che ti offriamo se contatti Glocal Agency di ...</span>
+														<a href="/offerte/142665/5-di-sconto-per-te"  title="5% di sconto per te">Vedi tutto</a>
+													</p>
+					</div>
+
+                    <div class="dto-3d">
+                                                    <span data-preview="off_discount"  class="dto-num">5 %</span>
+                            <span>Sconto</span>
+                                                <div class="c_left"></div>
+                    </div>
+
+				</div>
+			</div>
+			<!-- OFFER COLUMN -->
+                                </div>
+
+                                
+                            </div>
+                                                        <!-- MAIN OFFERS -->
+
+                            <!-- VIDEO MODULE -->
+                                                        <!-- VIDEO MODULE -->
+
+                            
+                            <div class="lnk-tab-group">
+                                <a class="icon-plus">Immagini</a>
+                            </div>
+                            <div class="tab-group">
+                                <!-- MAIN GALLERY -->
+                                <div>
+                                    <h3 id="company_gallery" class="hide_smrtphn">Immagini</h3>
+                                                    
+                                                                    <div class=" thumb-list ">
+                    <a href="/traduzioni-glocal-agency-di-claudia-dapra-vimg-142665.html?photo=1" title="Non conosciamo frontiere&comma; il nostro servizio copre tutte le lingue&excl;">
+                                                <img src="/site/company/51/142665/images/260967/non-conosciamo-frontiere-il-nostro-servizio-copre-tutte-le-lingue_ci1.jpg" alt="Non conosciamo frontiere&comma; il nostro servizio copre tutte le lingue&excl;" />
+                    </a>
+                </div>
+                                                                <a href="/traduzioni-glocal-agency-di-claudia-dapra-vimg-142665.html" class="float-R clean">Vedi tutte le immagini</a>
+                                </div>
+                                <!-- MAIN GALLERY -->
+                            </div>
+                            
+                            <div class="request-bg brds-round1 main-secction hide_smrtphn clean">
+                                <h3>Richiedi un preventivo a Glocal Agency di Claudia Daprà</h3>
+                                <p>Ricevi preventivi gratis senza impegno</p>
+                                                                <button class="std-btn js_presu" title="Chiedi un preventivo gratis" onclick="gaqTrackEvent('CompanyCard', 'ask_request', 'midButton_serv_company');">
+                                    Chiedi un preventivo gratis                                </button>
+                                                            </div>
+
+                                                        <!-- MAIN RELATED SERVICES-->
+                            <div class="hide_smrtphn">
+                                <h2 id="company_related_services">Servizi</h2>
+
+                                <!-- SERVICES WITH DESCRIPTION -->
+                                                                <!-- SERVICES WITH DESCRIPTION -->
+
+                                <ul class="rel-services clean">
+                                                                    <li>
+                                        <strong class="fakeh3">Traduzioni per lingua</strong>
+                                                                                    <ul>
+                                                                                            <li>Traduzioni in inglese</li>
+                                                                                            <li>Traduzioni in francese</li>
+                                                                                            <li>Traduzioni in tedesco</li>
+                                                                                            <li>Traduzioni in spagnolo</li>
+                                                                                            <li>Traduzioni in portoghese</li>
+                                                                                            <li>Traduzioni in russo</li>
+                                                                                            <li>Traduzioni in polacco</li>
+                                                                                            <li>Traduzioni in greco</li>
+                                                                                            <li>Traduzioni in cinese</li>
+                                                                                            <li>Traduzioni in giapponese</li>
+                                                                                            <li>Traduzioni in arabo</li>
+                                                                                            <li>Traduzioni in olandese</li>
+                                                                                            <li>Traduzioni in bulgaro</li>
+                                                                                            <li>Traduzioni in rumeno</li>
+                                                                                        </ul>
+                                                                            </li>
+                                                                    <li>
+                                        <strong class="fakeh3">Traduzioni Specifiche</strong>
+                                                                                    <ul>
+                                                                                            <li>Traduzioni Commerciali</li>
+                                                                                            <li>Traduzioni Tecniche</li>
+                                                                                            <li>Traduzioni Finanziarie</li>
+                                                                                            <li>Traduzioni Legali</li>
+                                                                                            <li>Traduzione Giurata</li>
+                                                                                            <li>Traduzioni di Marketing</li>
+                                                                                            <li>Traduzioni di Informatica</li>
+                                                                                            <li>Traduzioni di Telecomunicazioni</li>
+                                                                                            <li>Traduzioni Culturali</li>
+                                                                                            <li>Traduzioni Scientifiche</li>
+                                                                                        </ul>
+                                                                            </li>
+                                                                    <li>
+                                        <strong class="fakeh3">Traduzioni Particolari</strong>
+                                                                                    <ul>
+                                                                                            <li>Traduzioni Siti Web</li>
+                                                                                            <li>Traduzioni Software</li>
+                                                                                            <li>Traduzioni Riviste</li>
+                                                                                            <li>Traduzioni Comunicati Stampa</li>
+                                                                                            <li>Traduzioni Libri</li>
+                                                                                            <li>Traduzioni Tesi di laurea</li>
+                                                                                            <li>Traduzioni Brochure</li>
+                                                                                        </ul>
+                                                                            </li>
+                                                                    <li>
+                                        <strong class="fakeh3">Interpretariato</strong>
+                                                                                    <ul>
+                                                                                            <li>Interpretariato Simultaneo</li>
+                                                                                            <li>Interpretariato Consecutivo</li>
+                                                                                            <li>Interpretariato Chuchotage</li>
+                                                                                            <li>Interpretariato  di Trattativa</li>
+                                                                                        </ul>
+                                                                            </li>
+                                
+                                                                    <li>
+                                        <strong class="fakeh3">Traduzioni per località</strong>
+                                        <ul>
+                                                                                    <li>Bologna</li>
+                                                                                    <li>Bolzano</li>
+                                                                                    <li>Trento</li>
+                                                                                    <li>Belluno</li>
+                                                                                    <li>Padova</li>
+                                                                                    <li>Rovigo</li>
+                                                                                    <li>Venezia</li>
+                                                                                    <li>Verona</li>
+                                                                                    <li>Vicenza</li>
+                                                                                </ul>
+                                    </li>
+                                                                </ul>
+                            </div>
+
+                            <!-- MAIN RELATED SERVICES-->
+                            
+                                                        <div id="mb_rev" class="lnk-tab-group">
+                                <a class="icon-plus">Raccomandazioni</a>
+                            </div>
+                            <div class="tab-group">
+                                <!-- MAIN REVIEW -->
+                                <div>
+                                    <h3 class="hide_smrtphn up-offsets" id="go_reviews">Raccomandazioni</h3>
+                                    <!-- THIS MODULE HAS A JS IN global.js for showing and hiding all the review-->
+<div class=" last " itemprop="review" itemscope itemtype="http://schema.org/Review">
+    <div class="recomendation-rvw-box hreview">
+
+        <div class="user-rvw">
+            <span class="icon-user"></span>
+            <div class="i-block">
+                <span class="reviewer item" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                    <strong itemprop="name" class="fn">
+                        Gorska                    </strong>
+                </span>
+
+                                    <span style="display:none;">
+                        <span class="fn incard">
+                            Glocal Agency di Claudia Daprà                        </span>
+                    </span>
+            
+            </div>
+            <span class="review-client small inline-b">
+                Traduzioni Legali   Trento (Città), Trento                                    <span class="small" itemprop="datePublished" class="dtreviewed" content="2015-05-10">
+                        10 Maggio 2015                    </span>
+                                
+            </span>
+        </div>
+        <div class="twelvecol">
+            <div class="recomendation-text clean">
+                <div class="in-quotes">“</div>
+                <p itemprop="reviewBody" class="description item">
+                   Ottimo servizio. Tutto fatto con velocità e con altissima professionalità.                </p>
+                <div>
+                    <div class="out-quotes float-R">”</div>
+                    <div class="stars-date">
+                                                    <span class="score-rw" itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
+                                <meta itemprop="worstRating" content = "1">
+                                <meta itemprop="bestRating" content = "5">
+                                <span class="icon-star-full"></span><span class="icon-star-full"></span><span class="icon-star-full"></span><span class="icon-star-full"></span><span class="icon-star-half"></span>                                <span class="rating" itemprop="ratingValue">4.7</span>
+                            </span>
+                                            </div>
+                </div>
+            </div>
+        </div>
+        <div class="clean recomend-items">
+                        <div class="fourcol ">
+                    <div class="itm">
+                        <span>Tempo di risposta</span>
+                        <div>
+                            <div class="rev-bar">
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                            </div>
+                            <span>
+                            Molto rapido                            </span>
+                        </div>
+                    </div>
+                </div>
+                        <div class="fourcol ">
+                    <div class="itm">
+                        <span>Prezzo del servizio</span>
+                        <div>
+                            <div class="rev-bar">
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                            </div>
+                            <span>
+                            Buono                            </span>
+                        </div>
+                    </div>
+                </div>
+                        <div class="fourcol last">
+                    <div class="itm">
+                        <span>Livello di soddisfazione</span>
+                        <div>
+                            <div class="rev-bar">
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                            </div>
+                            <span>
+                            Molto alto                            </span>
+                        </div>
+                    </div>
+                </div>
+                </div>
+    </div>
+</div>
+<!--  ITEM REVIEW -->
+<!-- THIS MODULE HAS A JS IN global.js for showing and hiding all the review-->
+<div class=" last " itemprop="review" itemscope itemtype="http://schema.org/Review">
+    <div class="recomendation-rvw-box hreview">
+
+        <div class="user-rvw">
+            <span class="icon-user"></span>
+            <div class="i-block">
+                <span class="reviewer item" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                    <strong itemprop="name" class="fn">
+                        Erika                    </strong>
+                </span>
+
+                                    <span style="display:none;">
+                        <span class="fn incard">
+                            Glocal Agency di Claudia Daprà                        </span>
+                    </span>
+            
+            </div>
+            <span class="review-client small inline-b">
+                Traduzione Giurata   Vicenza (Città), Vicenza                                    <span class="small" itemprop="datePublished" class="dtreviewed" content="2015-05-06">
+                        06 Maggio 2015                    </span>
+                                
+            </span>
+        </div>
+        <div class="twelvecol">
+            <div class="recomendation-text clean">
+                <div class="in-quotes">“</div>
+                <p itemprop="reviewBody" class="description item">
+                   Il servizio Di Glocal Agency è stato molto buono, avevo bisogno di una traduzione legalizzata di un certificato di nascita ma da altre agenzie mi sono stati inviati dei preventivi folli. Ho quindi molto apprezzato l'onestà e la professionalità che mi sono state offerte.                </p>
+                <div>
+                    <div class="out-quotes float-R">”</div>
+                    <div class="stars-date">
+                                                    <span class="score-rw" itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
+                                <meta itemprop="worstRating" content = "1">
+                                <meta itemprop="bestRating" content = "5">
+                                <span class="icon-star-full"></span><span class="icon-star-full"></span><span class="icon-star-full"></span><span class="icon-star-full"></span><span class="icon-star-full"></span>                                <span class="rating" itemprop="ratingValue">5.0</span>
+                            </span>
+                                            </div>
+                </div>
+            </div>
+        </div>
+        <div class="clean recomend-items">
+                        <div class="fourcol ">
+                    <div class="itm">
+                        <span>Tempo di risposta</span>
+                        <div>
+                            <div class="rev-bar">
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                            </div>
+                            <span>
+                            Molto rapido                            </span>
+                        </div>
+                    </div>
+                </div>
+                        <div class="fourcol ">
+                    <div class="itm">
+                        <span>Prezzo del servizio</span>
+                        <div>
+                            <div class="rev-bar">
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                            </div>
+                            <span>
+                            Molto buono                            </span>
+                        </div>
+                    </div>
+                </div>
+                        <div class="fourcol last">
+                    <div class="itm">
+                        <span>Livello di soddisfazione</span>
+                        <div>
+                            <div class="rev-bar">
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                            </div>
+                            <span>
+                            Molto alto                            </span>
+                        </div>
+                    </div>
+                </div>
+                </div>
+    </div>
+</div>
+<!--  ITEM REVIEW -->
+<!-- THIS MODULE HAS A JS IN global.js for showing and hiding all the review-->
+<div class=" last " itemprop="review" itemscope itemtype="http://schema.org/Review">
+    <div class="recomendation-rvw-box hreview">
+
+        <div class="user-rvw">
+            <span class="icon-user"></span>
+            <div class="i-block">
+                <span class="reviewer item" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                    <strong itemprop="name" class="fn">
+                        Anonimo                    </strong>
+                </span>
+
+                                    <span style="display:none;">
+                        <span class="fn incard">
+                            Glocal Agency di Claudia Daprà                        </span>
+                    </span>
+            
+            </div>
+            <span class="review-client small inline-b">
+                Traduzioni Legali   Trento (Città), Trento                                    <span class="small" itemprop="datePublished" class="dtreviewed" content="2015-04-30">
+                        30 Aprile 2015                    </span>
+                                
+            </span>
+        </div>
+        <div class="twelvecol">
+            <div class="recomendation-text clean">
+                <div class="in-quotes">“</div>
+                <p itemprop="reviewBody" class="description item">
+                   Tutto perfetto..Gentilissimi, puntuali, onesti!                </p>
+                <div>
+                    <div class="out-quotes float-R">”</div>
+                    <div class="stars-date">
+                                                    <span class="score-rw" itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
+                                <meta itemprop="worstRating" content = "1">
+                                <meta itemprop="bestRating" content = "5">
+                                <span class="icon-star-full"></span><span class="icon-star-full"></span><span class="icon-star-full"></span><span class="icon-star-full"></span><span class="icon-star-full"></span>                                <span class="rating" itemprop="ratingValue">5.0</span>
+                            </span>
+                                            </div>
+                </div>
+            </div>
+        </div>
+        <div class="clean recomend-items">
+                        <div class="fourcol ">
+                    <div class="itm">
+                        <span>Tempo di risposta</span>
+                        <div>
+                            <div class="rev-bar">
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                            </div>
+                            <span>
+                            Molto rapido                            </span>
+                        </div>
+                    </div>
+                </div>
+                        <div class="fourcol ">
+                    <div class="itm">
+                        <span>Prezzo del servizio</span>
+                        <div>
+                            <div class="rev-bar">
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                            </div>
+                            <span>
+                            Molto buono                            </span>
+                        </div>
+                    </div>
+                </div>
+                        <div class="fourcol last">
+                    <div class="itm">
+                        <span>Livello di soddisfazione</span>
+                        <div>
+                            <div class="rev-bar">
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                            </div>
+                            <span>
+                            Molto alto                            </span>
+                        </div>
+                    </div>
+                </div>
+                </div>
+    </div>
+</div>
+<!--  ITEM REVIEW -->
+<!-- THIS MODULE HAS A JS IN global.js for showing and hiding all the review-->
+<div class=" last " itemprop="review" itemscope itemtype="http://schema.org/Review">
+    <div class="recomendation-rvw-box hreview">
+
+        <div class="user-rvw">
+            <span class="icon-user"></span>
+            <div class="i-block">
+                <span class="reviewer item" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                    <strong itemprop="name" class="fn">
+                        Katerine                    </strong>
+                </span>
+
+                                    <span style="display:none;">
+                        <span class="fn incard">
+                            Glocal Agency di Claudia Daprà                        </span>
+                    </span>
+            
+            </div>
+            <span class="review-client small inline-b">
+                Traduzione Giurata   Rovigo (Città), Rovigo                                    <span class="small" itemprop="datePublished" class="dtreviewed" content="2014-11-27">
+                        27 Novembre 2014                    </span>
+                                
+            </span>
+        </div>
+        <div class="twelvecol">
+            <div class="recomendation-text clean">
+                <div class="in-quotes">“</div>
+                <p itemprop="reviewBody" class="description item">
+                   Ottima prestazione professionale, ottimi prezzi, persona affidabile.....Raccomando a tutti eccellente.                </p>
+                <div>
+                    <div class="out-quotes float-R">”</div>
+                    <div class="stars-date">
+                                                    <span class="score-rw" itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
+                                <meta itemprop="worstRating" content = "1">
+                                <meta itemprop="bestRating" content = "5">
+                                <span class="icon-star-full"></span><span class="icon-star-full"></span><span class="icon-star-full"></span><span class="icon-star-full"></span><span class="icon-star-full"></span>                                <span class="rating" itemprop="ratingValue">5.0</span>
+                            </span>
+                                            </div>
+                </div>
+            </div>
+        </div>
+        <div class="clean recomend-items">
+                        <div class="fourcol ">
+                    <div class="itm">
+                        <span>Tempo di risposta</span>
+                        <div>
+                            <div class="rev-bar">
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                            </div>
+                            <span>
+                            Molto rapido                            </span>
+                        </div>
+                    </div>
+                </div>
+                        <div class="fourcol ">
+                    <div class="itm">
+                        <span>Prezzo del servizio</span>
+                        <div>
+                            <div class="rev-bar">
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                            </div>
+                            <span>
+                            Molto buono                            </span>
+                        </div>
+                    </div>
+                </div>
+                        <div class="fourcol last">
+                    <div class="itm">
+                        <span>Livello di soddisfazione</span>
+                        <div>
+                            <div class="rev-bar">
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                                 <div class="rev-inner-bar single-block"></div>
+                                                            </div>
+                            <span>
+                            Molto alto                            </span>
+                        </div>
+                    </div>
+                </div>
+                </div>
+    </div>
+</div>
+<!--  ITEM REVIEW -->
+                                    <a class="i-block text-align-R" href="/traduzioni-glocal-agency-di-claudia-dapra-vrev-142665.html" title="Vedi tutte le opinioni su Glocal Agency di Claudia Daprà">
+                                        Vedi tutte <span>(4)</span>
+                                    </a>
+                                                                    </div>
+                                <!-- MAIN REVIEW -->
+                            </div>
+                            
+                            
+                        </div>
+                        
+
+                        <div class="clean up-offsets">
+                        <div id="div_steps">
+    <div id="frm-request" class="frm-request request-bg brds-round1">
+        <div id="js_check_autocomplete" style="display:none;">
+            <h2 class="form_h2">Conferma la città selezionata</h2>
+            <p class="required">Seleziona la città in cui si realizzerà il servizio:</p>
+        </div>
+        <div id="errorProv" class="brds-round"  style="display:none; margin-top:15px;">
+            <strong id="js_error_prov_ttl">Texto prueba, eliminar cuando -2 funcione</strong>
+            <p id="js_error_prov_txt">desc de prueba, eliminar cuando el caso -2 funcione</p>
+
+            <button type="button" id="js_submit_ae2check" class="std-btn">
+                Invia            </button>
+            <div>
+                <a href="javascript:void(0);" id="list_link">
+                    Vedi altre aziende                    <span id="list_link_txt"></span>
+                </a>
+            </div>
+
+        </div>
+
+
+        <div class="js_content">
+            <h2 id="h2_form_ttl">Contatta Glocal Agency di Claudia Daprà</h2>
+
+
+            
+            <form id="request_form_v2" action="/request/request" method="post">
+                <fieldset class="">
+                    <label for="req_name" class="">Nome </label>
+                    <input id="req_name" name="req_name" type="text"  />
+                </fieldset>
+
+                <fieldset class="">
+                    <label for="req_email" class="">E-mail </label>
+                    <input id="req_email" name="req_email" type="email"  />
+                </fieldset>
+
+                <fieldset class="">
+                    <label for="req_phone" class="">Telefono</label>
+                    <input id="req_phone" type="tel" name="req_phone"  />
+                </fieldset>
+
+                <fieldset class="">
+                    <label for="population_autocomplete" class="pob-sugg">Citt&agrave; del servizio</label>
+                    <input type="text" autocorrect="off" autocapitalize="off" name="population_autocomplete" id="population_autocomplete" autocomplete="off" value="" />
+                    <input type="hidden" name="ae2_id" id="ae2_id" value="" />
+                    <input type="hidden" name="pop_id" id="pop_id" value="" />
+                </fieldset>
+
+                
+                <fieldset class=" hqf">
+                                            <input type="hidden" id="head_id" name="head_id" value="163635" />
+
+                                    </fieldset>
+
+                <!-- Extended form -->
+                                <!-- End Extended form -->
+
+                <!-- START APPOINTMENT MODULE -->
+                                <!-- END APPOINTMENT MODULE -->
+
+                <fieldset class="req-desc">
+                    <label for="req_text">Richiesta</label>
+                    <textarea name="req_text" id="req_text" placeholder="Esempio&colon; &OpenCurlyDoubleQuote;Ho bisogno di un preventivo di traduzioni che consiste in&hellip;&quot;"></textarea>
+
+                </fieldset>
+
+                <fieldset class="button-set text-align-C">
+
+                    
+                    <button id="btn_req_submit" type="submit" class="std-btn btn-big">Invia</button>
+                    <input type="hidden" name="off_id" id="off_id" value="0" />
+
+                                            <div class="dto-mini-box i-block">
+                            Solo con GuidaTraduzioni.it <span class="dto brds-round0">5% sconto</span>
+                        </div>
+                                        <div class="clean text-align-L">
+                        <p>Cliccando accetti le <a href="/aviso_legal.html" target="_blank" rel="nofollow">Condizioni di uso</a> e <a href="/proteccion_datos.html" target="_blank" rel="nofollow">Protezione dei dati</a></p>
+                    </div>
+                </fieldset>
+
+                
+
+            </form>
+        </div>
+    </div>
+</div>
+                        </div>
+
+                        
+                    </div>
+                    <!-- MAIN CONTENT -->
+
+                    <!-- SIDEBAR -->
+                    <div class="fourcol last sidebar hide_smrtphn">
+
+                        <!-- HEADQUARTERS SIDEBAR -->
+                        <div class="sidebar-secction">
+                            <!-- MAPS AND SOCIAL -->
+                            <div id = "static-map" >
+                                <a class="map-thumb js_map_lnk hide_smrtphn" href="/traduzioni-glocal-agency-di-claudia-dapra-vtraduzioni-142665.html?map">
+                                    <img src="http://maps.google.com/maps/api/staticmap?maptype=roadmap&size=300x200&markers=46.051453,11.122401&key=AIzaSyDnjzBsd68IcgU2kcuCEe2rwB3ExbUFQLM&sensor=false" />
+                                </a>
+
+                                                                <a class="map-thumb  hide_dsktp hide_tblt" onclick="_gaq.push(['_trackEvent', 'CompanyCard', 'showmap2', 'call_phone_head', '', '']);" href="http://maps.google.com/maps?q=46.051453,11.122401">
+                                    <img src="http://maps.google.com/maps/api/staticmap?maptype=roadmap&size=300x200&markers=46.051453,11.122401&key=AIzaSyDnjzBsd68IcgU2kcuCEe2rwB3ExbUFQLM&sensor=false" />
+                                </a>
+                            </div>
+
+                            <address class="icon-location">
+                            via Degasperi 18, Trento, Trento                            </address>
+                            <!-- MAPS AND SOCIAL -->
+
+                        <!-- HEADQUARTERS SIDEBAR -->
+
+                        <!-- SOCIALMEDIA SIDEBAR -->
+
+                            <div class="socialmedia">
+                                <span class="icon-warning-sign"> Ci sono dati incorretti?</span>
+                                <a class="js_form_error_lnk" > Avvisaci!</a>
+                            </div>
+
+                            <!-- INCORRECT DATA FORM -->
+                                                        <div id="incorrect_data" style="display:none;">
+                                <div class="layer-bg brds-round3">
+                                    <!-- <div class="icon-x close"></div> -->
+                                    <h3>Errori nella scheda?</h3>
+                                    <form id="incorrect_form" action="/company/send_incorrect_data_email" method="post">
+                                        <fieldset>
+                                            <label class="pholder absolute" for="report_user">Nome </label>
+                                            <input name="report_user" id="report_user" placeholder="Nome " />
+                                        </fieldset>
+                                        <fieldset>
+                                            <label class="pholder absolute" for="report_email">E-mail</label>
+                                            <input name="report_email" id="report_email" type="email" placeholder="E-mail" />
+                                        </fieldset>
+                                        <fieldset>
+                                            <label class="pholder absolute" for="report_text">Qual è l'errore</label>
+                                            <textarea name="report_text" id="report_text" placeholder="Qual è l'errore"></textarea>
+                                        </fieldset>
+                                        <fieldset>
+                                            <input name="com" type="hidden" value="142665" />
+                                            <button class="std-btn">Invia</button>
+                                        </fieldset>
+                                    </form>
+                                </div>
+                            </div>                            <!-- INCORRECT DATA FORM -->
+
+                            
+                                                        <div class="sides-offsets">
+                                                            </div>
+                        </div>
+                        <!-- SOCIALMEDIA SIDEBAR -->
+
+                        <!-- Special links "reservar" alquilovehículos -->
+                        
+                        
+                                                <!-- Special links "reservar" alquilovehículos -->
+
+                        
+                        <!-- GALLERY SIDEBAR -->
+                                                <!-- GALLERY SIDEBAR -->
+
+                        
+                                                                        <!-- QANDA SIDEBAR -->
+                        <div class="sidebar-secction">
+                            <div class="qanda-sidebar">
+                                <h3 id="company_qanda_sidebar" >Questa impresa ha risposto</h3>
+                                                                                                <div class="qanda-item">
+                                    <span class="q-bullet  icon-icon-arrow-right">?</span>
+                                    <a href="/domande/costi">Costi</a>
+                                    <span>14 Risposte</span>
+                                </div>
+                                                                <div class="qanda-item">
+                                    <span class="q-bullet  icon-icon-arrow-right">?</span>
+                                    <a href="/domande/cerco-traduttore-madrelingua-rumena">Cerco traduttore madrelingua rumena</a>
+                                    <span>31 Risposte</span>
+                                </div>
+                                                                <div class="qanda-item">
+                                    <span class="q-bullet  icon-icon-arrow-right">?</span>
+                                    <a href="/domande/traduzione-per-omologazione-titolo-in-spagna">Traduzione per omologazione titolo in spagna</a>
+                                    <span>18 Risposte</span>
+                                </div>
+                                                            </div>
+
+                        </div>
+                        <!-- QANDA SIDEBAR -->
+                                                
+                        
+                    </div>
+                    <!-- SIDEBAR -->
+
+                    <div class="twelvecol" id="nav_bottom"></div>
+
+                    <div class="twelvecol" id="skirt">
+                        <h2>Servizi affini</h2>
+                        <ul>
+                                                        <li>
+                                <a href="/traduzioni-commerciali-trento-vsubservprov-1565-237102.html" title="Traduzioni Commerciali Trento">Traduzioni Commerciali Trento</a>
+                            </li>
+                                                        <li>
+                                <a href="/traduzioni-interpretariato-simultaneo-trento-vsubservprov-1573-237102.html" title="Interpretariato Simultaneo Trento">Interpretariato Simultaneo Trento</a>
+                            </li>
+                                                        <li>
+                                <a href="/traduzioni-in-inglese-trento-vsubservprov-1584-237102.html" title="Traduzioni in inglese Trento">Traduzioni in inglese Trento</a>
+                            </li>
+                                                        <li>
+                                <a href="/traduzioni-in-francese-trento-vsubservprov-1585-237102.html" title="Traduzioni in francese Trento">Traduzioni in francese Trento</a>
+                            </li>
+                                                        <li>
+                                <a href="/traduzioni-in-tedesco-trento-vsubservprov-1586-237102.html" title="Traduzioni in tedesco Trento">Traduzioni in tedesco Trento</a>
+                            </li>
+                                                        <li>
+                                <a href="/traduzioni-in-spagnolo-trento-vsubservprov-1587-237102.html" title="Traduzioni in spagnolo Trento">Traduzioni in spagnolo Trento</a>
+                            </li>
+                                                        <li>
+                                <a href="/traduzioni-in-portoghese-trento-vsubservprov-1588-237102.html" title="Traduzioni in portoghese Trento">Traduzioni in portoghese Trento</a>
+                            </li>
+                                                        <li>
+                                <a href="/traduzioni-in-russo-trento-vsubservprov-1589-237102.html" title="Traduzioni in russo Trento">Traduzioni in russo Trento</a>
+                            </li>
+                                                        <li>
+                                <a href="/traduzioni-tecniche-trento-vsubservprov-2923-237102.html" title="Traduzioni Tecniche Trento">Traduzioni Tecniche Trento</a>
+                            </li>
+                                                        <li>
+                                <a href="/traduzioni-per-lingua-trento-vservprov-1026-237102.html" title="Traduzioni per lingua Trento">Traduzioni per lingua Trento</a>
+                            </li>
+                                                        <li>
+                                <a href="/traduzioni-specifiche-trento-vservprov-1023-237102.html" title="Traduzioni Specifiche Trento">Traduzioni Specifiche Trento</a>
+                            </li>
+                                                        <li>
+                                <a href="/traduzioni-legali-trento-vsubservprov-1567-237102.html" title="Traduzioni Legali Trento">Traduzioni Legali Trento</a>
+                            </li>
+                                                        <li>
+                                <a href="/traduzioni-traduzione-giurata-trento-vsubservprov-2921-237102.html" title="Traduzione Giurata Trento">Traduzione Giurata Trento</a>
+                            </li>
+                                                        <li>
+                                <a href="/traduzioni-interpretariato-trento-vservprov-1024-237102.html" title="Interpretariato Trento">Interpretariato Trento</a>
+                            </li>
+                                                        <li>
+                                <a href="/traduzioni-scientifiche-trento-vsubservprov-1572-237102.html" title="Traduzioni Scientifiche Trento">Traduzioni Scientifiche Trento</a>
+                            </li>
+                                                        <li>
+                                <a href="/traduzioni-interpretariato-consecutivo-trento-vsubservprov-1574-237102.html" title="Interpretariato Consecutivo Trento">Interpretariato Consecutivo Trento</a>
+                            </li>
+                                                        <li>
+                                <a href="/traduzioni-interpretariato-chuchotage-trento-vsubservprov-1575-237102.html" title="Interpretariato Chuchotage Trento">Interpretariato Chuchotage Trento</a>
+                            </li>
+                                                        <li>
+                                <a href="/traduzioni-interpretariato-di-trattativa-trento-vsubservprov-1576-237102.html" title="Interpretariato  di Trattativa Trento">Interpretariato  di Trattativa Trento</a>
+                            </li>
+                                                    </ul>
+                    </div><!--end skirt-->
+
+                </div>
+            </div>
+
+            <div id="review-layer-dialog" style="display:none;">
+                <div class="review-layer-box ">
+                    <div class="layer-bg brds-round3 js_loading_layer loading_layer text-align-C">
+                        <strong>
+                            Caricamento…                        </strong>
+                        <img src="/img/web/ajax-loader.gif" alt="" />
+                    </div>
+                    <div class="js_content_layer"></div>
+                </div>
+            </div>
+
+                <footer>
+            <div id="footer">
+
+
+            <div class="content">
+                <div class="row">
+                    <div class="fourcol">
+                        <img src="/site/own/logo-footer.png" alt="traduzioni" title="traduzioni" class="logo-footer" width="269"
+                            height="46"/>
+                        <ul class="float-L">
+                            <li><a href="/quienes.html" rel="nofollow" title="Chi siamo">Chi siamo</a></li>
+                            <li><a href="/aviso_legal.html" rel="nofollow" title="Condizioni legali">Condizioni legali</a></li>
+                            <li><a href="/proteccion_datos.html" rel="nofollow" title="Protezione dei dati">Protezione dei dati</a></li>
+
+                            
+                        </ul>
+                        <ul class="float-L">
+                                                        <li><a href="/potenciales.html" rel="nofollow" title="Servizio Premium">Servizio Premium</a></li>
+                                                        <li><a href="/register_web.html" rel="nofollow" title="Registra la tua azienda">Registra la tua azienda</a></li>
+                            <li><a href="/front/user_account/login.html" rel="nofollow" title="Accesso Aziende">Accesso Aziende</a></li>
+                        </ul>
+
+                        
+                    </div>
+
+                                        <div class="eightcol last">
+                                                <strong>Ultime imprese</strong>
+                        <ul>
+                                                        <li><a href="/traduzioni-artrixinhol-vtraduzioni-151250.html" title="Artrixinhol">Artrixinhol</a></li>
+                                                        <li><a href="/traduzioni-michela-solange-baiguini-vtraduzioni-151203.html" title="Michela Solange Baiguini">Michela Solange Baiguini</a></li>
+                                                        <li><a href="/traduzioni-noemi-casati-vtraduzioni-151195.html" title="Noemi Casati">Noemi Casati</a></li>
+                                                        <li><a href="/traduzioni-mt-moretti-translations-vtraduzioni-150977.html" title="Mt moretti translations">Mt moretti translations</a></li>
+                                                        <li><a href="/traduzioni-the-hub-lecce-srls-vtraduzioni-150891.html" title="The Hub Lecce SRLs">The Hub Lecce SRLs</a></li>
+                                                    </ul>
+                        
+                                                <strong>Province Top</strong>
+                        <ul>
+                                                        <li><a href="/traduzioni-milano-vprovincia-237051.html" title="Traduzioni Milano">Traduzioni Milano</a></li>
+                                                        <li><a href="/traduzioni-roma-vprovincia-237038.html" title="Traduzioni Roma">Traduzioni Roma</a></li>
+                                                        <li><a href="/traduzioni-torino-vprovincia-237066.html" title="Traduzioni Torino">Traduzioni Torino</a></li>
+                                                        <li><a href="/traduzioni-bologna-vprovincia-237022.html" title="Traduzioni Bologna">Traduzioni Bologna</a></li>
+                                                        <li><a href="/traduzioni-bergamo-vprovincia-237044.html" title="Traduzioni Bergamo">Traduzioni Bergamo</a></li>
+                                                    </ul>
+                        
+                        
+                                                <strong>Servizi per provincia</strong>
+                        <ul>
+                                                        <li><a href="/traduzioni-brochure-trento-vsubservprov-1583-237102.html" title="Traduzione di pubblicità Trento">Traduzione di pubblicità Trento</a></li>
+                                                        <li><a href="/traduzioni-siti-web-trento-vsubservprov-1577-237102.html" title="Traduzioni per siti web Trento">Traduzioni per siti web Trento</a></li>
+                                                        <li><a href="/traduzioni-comunicati-stampa-trento-vsubservprov-1580-237102.html" title="Traduzioni Comunicati Stampa Trento">Traduzioni Comunicati Stampa Trento</a></li>
+                                                        <li><a href="/traduzioni-commerciali-trento-vsubservprov-1565-237102.html" title="Traduzione di testi economici Trento">Traduzione di testi economici Trento</a></li>
+                                                        <li><a href="/traduzioni-in-inglese-trento-vsubservprov-1584-237102.html" title="Traduttore di inglese Trento">Traduttore di inglese Trento</a></li>
+                                                    </ul>
+                        
+                        <!--  TODO IF EXISTS -->
+                                                    <strong>Ricerche frequenti</strong>
+                            <ul>
+                                                                                                <li><a href="/traduzioni-interpretariato-vservizi-1024.html" title="Interpretariato">Interpretariato</a></li>
+                                                                <li><a href="/traduzioni-per-lingua-vservizi-1026.html" title="Traduzioni per lingua">per lingua</a></li>
+                                                                <li><a href="/traduzioni-legali-vsubservizi-1567.html" title="Traduzioni Legali">Legali</a></li>
+                                                                <li><a href="/traduzioni-commerciali-vsubservizi-1565.html" title="Traduzioni Commerciali">Commerciali</a></li>
+                                                            </ul>
+                                                <!--  TODO IF EXISTS -->
+
+                    </div>
+                                    </div>
+                <div class="row">
+                    <div class="twelvecol">
+                        <div class="footbase">
+                            <div class="float-R">
+                                <img src="/img/web/logo-gi.png" alt="Grupo Intercom" width="140" height="28"/>
+                                <img src="/img/web/logo-ie-white.png" alt="Verticales Intercom, S.L." width="100" height="28"/>
+                            </div>
+                            <ul>
+                                
+                                                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+        </div>
+
+            <script type="text/javascript" src="/00000526/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/00000526/site/own/jquery.js"></script>
+    <script type="text/javascript" src="/00000526/site/own/global.js"></script>
+    <script type="text/javascript" src="/00000526/site/own/_dialog_interface.js"></script>
+    <script type="text/javascript" src="/00000526/site/own/dialog.js"></script>
+
+    <script type="text/javascript" src="/00000526/site/own/front_validator.js"></script>
+    <script type="text/javascript" src="/00000526/site/own/front.js"></script>
+
+    <script type="text/javascript">
+    //<![CDATA[
+        $.extend(App.pageVar, {couId: "109" });
+    //]]>
+    </script>
+
+    <script type="text/javascript" src="/00000526/site/own/regional.js"></script>
+
+
+        <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "http://www.guidatraduzioni.it",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://www.guidatraduzioni.it/search?search={search}",
+        "query-input": "required name=search"
+      }
+    }
+    </script>
+
+    
+        <script src="//cdn.optimizely.com/js/2900880436.js"></script>
+        <script src="//cdn-static.formisimo.com/tracking/js/tracking.js"></script>
+        <!-- <script src="//cdn.optimizely.com/js/214940937.js"></script> -->
+        <script src="/js/jwplayer/jwplayer.js"></script>
+        <script type="text/javascript">jwplayer.key="99IrrR3OB/WxwiNaTSZZZSr7GSjaKBAlLDP4EJ+jScs="</script>
+
+        <script type="text/javascript">
+        //<![CDATA[
+            App.pageVar = {"proId":"38","comId":"142665","proLaunch":0,"couId":"109","ae2check":1,"proximityCheck":1,"142665":{"head_by_pop":{"237007854":{"length":1,"0":"163635"}},"head_by_ae2":{"237102":{"length":1,"0":"163635"}},"headId":"163635"},"msgs":{"FORM_ERROR_repeated_request_txt":"Questa impresa ha gi\u00e0 ricevuto la tua richiesta. Se desideri inviare una nuova richiesta alla stessa impresa modifica il testo."},"reviews":5,"more_reviews":5};
+        //]]>
+        </script>
+
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;language=it-IT&amp;sensor=false&amp;key=AIzaSyDnjzBsd68IcgU2kcuCEe2rwB3ExbUFQLM"></script>
+
+        
+    <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"a9443b4dd8","applicationID":"4706831","transactionName":"YAFXbEcDCEMHVkANWllLYEpcTQ9eAlBMSkVfFA==","queueTime":0,"applicationTime":31,"ttGuid":"","agentToken":"","atts":"TEZUGg8ZG00=","errorBeacon":"bam.nr-data.net","agent":"js-agent.newrelic.com\/nr-632.min.js"}</script></body>
+
+</html>
